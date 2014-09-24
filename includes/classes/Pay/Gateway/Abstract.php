@@ -45,7 +45,7 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
 
         $selectionType = get_option('paynl_bankselection');
 
-        if (!empty($optionSubs) && $selectionType != 'none') {
+        if ($this->getOptionId() == 10 && !empty($optionSubs) && $selectionType != 'none') {
             if ($selectionType == 'select') {
                 ?>
                 <p>

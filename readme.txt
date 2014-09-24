@@ -3,16 +3,16 @@ Contributors: andypay
 Link: http://www.pay.nl
 Tags: paynl, paymentmethods, woocommerce
 Requires at least: 3.0.1
-Stable tag: trunk
+Stable tag: 2.2.3
 Tested up to: 4.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin adds the pay.nl paymentmethods to your woocommerce (2.1 and higher) installation.
+This plugin adds the pay.nl payment methods to your woocommerce (2.1 and higher) installation.
 
 == Description ==
 
-By installing this plugin, you can get the pay.nl paymentmethods working within minutes.
+By installing this plugin, you can get the pay.nl payment methods working within minutes.
 
 For any further questions please send an email to support@pay.nl
 
@@ -69,6 +69,9 @@ Paid accounts have better tarriffs! see: [tariffs](http://pay.nl/tarieven)
 4. The iDEAL payment screen (Rabobank)
 
 == Changelog ==
+
+= 2.2.3 =
+* Added new payment method 'Mybank'
 
 = 2.2.2 =
 * Fixed a bug where the plugin would not detect woocommerce when using sitewide plugins
