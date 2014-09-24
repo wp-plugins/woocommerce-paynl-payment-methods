@@ -17,7 +17,7 @@ By installing this plugin you’ll be able to integrate the payment methods of Pay
 Payment Service Provider Pay.nl offers online payment options for webshops and websites. Pay.nl has different payment option packages available. These packages range from the smallest one (XS) to the largest one (XL). Not sure which package is suitable for you? Start with the try-out package called Pioneer XS! With the Pioneer XS you will be able to use all payment options  except for the options credit card and direct debit. Just fill in the registration form and you’ll receive a personal account by email. With this account you have direct access to the Pay.nl Administration Panel where you can add your website(s) and install the payment options that are essential for your website. 
 
 With Pay.nl you can add the following payment options to your website:
-* iDeal ( € 0,39 - € 0,31 for each transaction)
+* iDeal ( &euro; 0,39 - &euro; 0,31 for each transaction)
 * Direct debit
 * Credit card (Visa / MasterCard)
 * Bancontact / Mister Cash
