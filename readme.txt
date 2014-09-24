@@ -1,7 +1,7 @@
 === Woocommerce Pay.nl Payment Methods ===
 Contributors: andypay
 Link: http://www.pay.nl
-Tags: paynl, paymentmethods, woocommerce
+Tags: paynl, paymentmethods, woocommerce, ideal, paypal, creditcard, mybank, sofortbanking, afterpay, mistercash, bancontact, paysafecard, clickandbuy, giropay, incasso, betaalmethoden
 Requires at least: 3.0.1
 Stable tag: 2.2.4
 Tested up to: 4.0
@@ -12,11 +12,12 @@ This plugin adds the pay.nl payment methods to your woocommerce (2.1 and higher)
 
 == Description ==
 
-By installing this plugin you’ll be able to integrate the payment methods of Pay.nl to your WooCommerce Webshop. This will only take a few minutes. If the plugin is successfully installed your customers will then be able to checkout their orders through the payment options such as iDeal, PayPal, Creditcard and so on.  
+By installing this plugin you'll be able to integrate the payment methods of Pay.nl to your WooCommerce Webshop. This will only take a few minutes. If the plugin is successfully installed your customers will then be able to checkout their orders through the payment options such as iDeal, PayPal, Creditcard and so on.  
 
-Payment Service Provider Pay.nl offers online payment options for webshops and websites. Pay.nl has different payment option packages available. These packages range from the smallest one (XS) to the largest one (XL). Not sure which package is suitable for you? Start with the try-out package called Pioneer XS! With the Pioneer XS you will be able to use all payment options  except for the options credit card and direct debit. Just fill in the registration form and you’ll receive a personal account by email. With this account you have direct access to the Pay.nl Administration Panel where you can add your website(s) and install the payment options that are essential for your website. 
+Payment Service Provider Pay.nl offers online payment options for webshops and websites. Pay.nl has different payment option packages available. These packages range from the smallest one (XS) to the largest one (XL). Not sure which package is suitable for you? Start with the try-out package called Pioneer XS! With the Pioneer XS you will be able to use all payment options  except for the options credit card and direct debit. Just fill in the registration form and you'll receive a personal account by email. With this account you have direct access to the Pay.nl Administration Panel where you can add your website(s) and install the payment options that are essential for your website. 
 
 With Pay.nl you can add the following payment options to your website:
+
 * iDeal ( &euro; 0,39 - &euro; 0,31 for each transaction)
 * Direct debit
 * Credit card (Visa / MasterCard)
@@ -29,10 +30,9 @@ With Pay.nl you can add the following payment options to your website:
 * ClickandBuy
 * Mybank
 
-For the registration form, visit the registration page (in Dutch): [www.pay.nl/registreren](http://www.pay.nl/registreren) 
+For the registration form, visit the registration page (in Dutch): [www.pay.nl/registreren](http://www.pay.nl/registreren)
 For more information about the payment rates go to [www.pay.nl/tarieven](htp://www.pay.nl/tarieven)
 For more information about the payment solution packages, just visit [www.pay.nl/pakketten](http://www.pay.nl/pakketten)
-
 
 For any further questions please send an email to support@pay.nl
 
