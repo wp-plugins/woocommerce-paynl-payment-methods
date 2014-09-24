@@ -3,7 +3,7 @@ Contributors: andypay
 Link: http://www.pay.nl
 Tags: paynl, paymentmethods, woocommerce, ideal, paypal, creditcard, mybank, sofortbanking, afterpay, mistercash, bancontact, paysafecard, clickandbuy, giropay, incasso, betaalmethoden
 Requires at least: 3.0.1
-Stable tag: 2.2.4
+Stable tag: 2.2.5
 Tested up to: 4.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
