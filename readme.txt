@@ -3,7 +3,7 @@ Contributors: andypay
 Link: http://www.pay.nl
 Tags: paynl, paymentmethods, woocommerce
 Requires at least: 3.0.1
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 Tested up to: 4.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,27 @@ This plugin adds the pay.nl payment methods to your woocommerce (2.1 and higher)
 
 == Description ==
 
-By installing this plugin, you can get the pay.nl payment methods working within minutes.
+By installing this plugin you’ll be able to integrate the payment methods of Pay.nl to your WooCommerce Webshop. This will only take a few minutes. If the plugin is successfully installed your customers will then be able to checkout their orders through the payment options such as iDeal, PayPal, Creditcard and so on.  
+
+Payment Service Provider Pay.nl offers online payment options for webshops and websites. Pay.nl has different payment option packages available. These packages range from the smallest one (XS) to the largest one (XL). Not sure which package is suitable for you? Start with the try-out package called Pioneer XS! With the Pioneer XS you will be able to use all payment options  except for the options credit card and direct debit. Just fill in the registration form and you’ll receive a personal account by email. With this account you have direct access to the Pay.nl Administration Panel where you can add your website(s) and install the payment options that are essential for your website. 
+
+With Pay.nl you can add the following payment options to your website:
+* iDeal ( € 0,39 - € 0,31 for each transaction)
+* Direct debit
+* Credit card (Visa / MasterCard)
+* Bancontact / Mister Cash
+* Giropay
+* Sofortbanking
+* Banktransfer EU
+* Afterpay
+* PayPal
+* ClickandBuy
+* Mybank
+
+For the registration form, visit the registration page (in Dutch): [www.pay.nl/registreren](http://www.pay.nl/registreren) 
+For more information about the payment rates go to [www.pay.nl/tarieven](htp://www.pay.nl/tarieven)
+For more information about the payment solution packages, just visit [www.pay.nl/pakketten](http://www.pay.nl/pakketten)
+
 
 For any further questions please send an email to support@pay.nl
 
@@ -20,9 +40,9 @@ For any further questions please send an email to support@pay.nl
 
 This section describes how to install the plugin and get it working.
 
-1. Upload this directory to the `/wp-content/plugins/` directory Or upload this zip by using the upload plugin function of wordpress
+1. Install the plugin via Plugins -> new plugin
 2. Activate the plugin through the 'Plugins' menu in WordPress, the name of this plugin is: Woocommerce Pay.nl Payment Methods
-3. Under Woocommerce -> Settings -> Payment configure the apitoken and serviceid and activate the desired payment methods.
+3. Under Woocommerce -> Settings -> Payment, configure the apitoken and serviceid and activate the desired payment methods.
 4. You can now accept payments using pay.nl
 
 
@@ -38,6 +58,7 @@ At the moment the plugin supports the following payment methods:
 
 * Afterpay
 * Cartebleue
+* Click and buy
 * Giropay
 * iDEAL
 * Incasso
@@ -45,6 +66,7 @@ At the moment the plugin supports the following payment methods:
 * Minitix sms
 * Mistercash/Bancontact
 * Manual transfer
+* Mybank
 * Paypal
 * Paysafecard
 * Postepay
@@ -69,6 +91,9 @@ Paid accounts have better tarriffs! see: [tariffs](http://pay.nl/tarieven)
 4. The iDEAL payment screen (Rabobank)
 
 == Changelog ==
+
+= 2.2.4 =
+* Added payment method 'Click and buy'
 
 = 2.2.3 =
 * Added new payment method 'Mybank'

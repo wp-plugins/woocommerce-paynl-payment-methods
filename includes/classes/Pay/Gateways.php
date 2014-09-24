@@ -11,6 +11,7 @@ class Pay_Gateways {
         $paymentOptions = array(
             'Pay_Gateway_Afterpay',
 			'Pay_Gateway_Cartebleue',
+            'Pay_Gateway_Clickandbuy',
             'Pay_Gateway_Sofortbanking',
             'Pay_Gateway_Giropay',
             'Pay_Gateway_Ideal',
