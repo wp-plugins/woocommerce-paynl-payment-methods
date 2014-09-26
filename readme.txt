@@ -1,6 +1,7 @@
 === Woocommerce Pay.nl Payment Methods ===
 Contributors: andypay
-Link: http://www.pay.nl
+Donate link: https://www.pay.nl/webshops/plugin-woocommerce
+Link: https://www.pay.nl
 Tags: paynl, paymentmethods, woocommerce, ideal, paypal, creditcard, mybank, sofortbanking, afterpay, mistercash, bancontact, paysafecard, clickandbuy, giropay, incasso, betaalmethoden
 Requires at least: 3.0.1
 Stable tag: 2.2.5
@@ -50,7 +51,7 @@ This section describes how to install the plugin and get it working.
 
 = How can i get an account for pay.nl? =
 
-You can register [here](http://pay.nl/registreren) (dutch and belgian companies only)
+You can register [here](https://pay.nl/registreren) (dutch and belgian companies only)
 
 = What payment methods are available through this plugin  =
 
@@ -76,12 +77,12 @@ At the moment the plugin supports the following payment methods:
 
 The easiest way to get started is bij using a free pioneer account.
 With this account there are no monthly fees, you'll only pay transaction costs for the transactions you make.
-Check the pioneer tarriffs [here](http://pay.nl/tarieven-pioneer)
+Check the pioneer tarriffs [here](https://pay.nl/tarieven-pioneer)
 
 If you want to be able to use creditcards, you'll need to have at least a professional account.
-For more information check: [pakketten](http://pay.nl/pakketten)
+For more information check: [pakketten](https://pay.nl/pakketten)
 
-Paid accounts have better tarriffs! see: [tariffs](http://pay.nl/tarieven)
+Paid accounts have better tarriffs! see: [tariffs](https://pay.nl/tarieven)
 
 == Screenshots ==
 
