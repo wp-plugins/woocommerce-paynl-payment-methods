@@ -5,6 +5,7 @@ class Pay_Setup {
     const db_version = 1.0;
 
     public static function install() {
+        self::checkRequirements();
         global $wpdb;
         
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
@@ -52,5 +53,12 @@ class Pay_Setup {
           add_option("pay_db_version", self::db_version);
         }
     }
-
+    private static function checkRequirements(){
+        if(!is_plugin_active('woocommerce/woocommerce.php') && !is_plugin_active_for_network('woocommerce/woocommerce.php')){
+            $error = __('Cannot activate Woocommerce Paynl Payment Methods because woocommerce is not found.<br />Please install and activate woocommerce first','woocommerce-payment-paynl');
+            $title = __('Woocommerce not found','woocommerce-payment-paynl');
+           
+            wp_die($error, $title, array('back_link'=>true));
+        }
+    }
 }
