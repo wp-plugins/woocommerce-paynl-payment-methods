@@ -1,5 +1,6 @@
 === Woocommerce Pay.nl Payment Methods ===
 Contributors: andypay
+Donate link: https://www.pay.nl/webshops/plugin-woocommerce
 Link: http://www.pay.nl
 Tags: paynl, paymentmethods, woocommerce, ideal, paypal, creditcard, mybank, sofortbanking, afterpay, mistercash, bancontact, paysafecard, clickandbuy, giropay, incasso, betaalmethoden
 Requires at least: 3.0.1
@@ -18,7 +19,7 @@ Payment Service Provider Pay.nl offers online payment options for webshops and w
 
 With Pay.nl you can add the following payment options to your website:
 
-* iDeal ( &euro; 0,39 - &euro; 0,31 for each transaction)
+* iDeal
 * Direct debit
 * Credit card (Visa / MasterCard)
 * Bancontact / Mister Cash
