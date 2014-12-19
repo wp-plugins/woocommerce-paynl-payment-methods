@@ -23,6 +23,19 @@ class Pay_Helper_Transaction {
         $insertId = $wbdb->insert_id;
         return $insertId;
     }
+    
+    public static function getPaidTransactionIdForOrderId($orderId){
+        global $wpdb;
+        $table_name_transactions = $wpdb->prefix . "pay_transactions";
+        $result = $wpdb->get_results(
+                $wpdb->prepare("SELECT transaction_id FROM $table_name_transactions WHERE order_id = %s AND status = 'SUCCESS'", $orderId), ARRAY_A
+        );
+        if(!empty($result)){
+            return $result[0]['transaction_id'];
+        } else {
+            return false;
+        }
+    }
 
     private static function updateStatus($transactionId, $status) {
         global $wpdb;

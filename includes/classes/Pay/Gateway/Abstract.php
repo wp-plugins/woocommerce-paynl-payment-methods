@@ -29,6 +29,8 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
         $this->method_title = 'Pay.nl - ' . $this->getName();
         $this->method_description = sprintf(__('Activate this module to accept %s transactions', 'woocommerce-payment-paynl'), $this->getName());
 
+        $this->supports = array('products', 'refunds');
+
         $this->init_form_fields();
         $this->init_settings();
 
@@ -136,7 +138,7 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
                     'countryCode' => $order->billing_country
                 ),
             );
-            
+
             $arrEnduser['language'] = get_option('paynl_language');
             //klantdata opsturen
             $api->setEnduser($arrEnduser);
@@ -214,6 +216,44 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
             )
         );
         parent::init_settings();
+    }
+
+    /**
+     * Process a refund if supported
+     * @param  int $order_id
+     * @param  float $amount
+     * @param  string $reason
+     * @return  bool|wp_error True or false based on success, or a WP_Error object
+     */
+    public function process_refund($order_id, $amount = null, $reason = '') {
+        $order = wc_get_order($order_id);
+
+        $transactionId = Pay_Helper_Transaction::getPaidTransactionIdForOrderId($order_id);
+
+        if (!$order || !$transactionId) {
+            return false;
+        }
+
+        try {
+            $refundApi = new Pay_Api_Refund();
+
+            $refundApi->setApiToken($this->getApiToken());
+            $refundApi->setServiceId($this->getServiceId());
+
+            $refundApi->setTransactionId($transactionId);
+            $refundApi->setAmount((int) round($amount * 100));
+            $refundApi->setDescription($reason);
+
+            $result = $refundApi->doRequest();
+            
+            $order->add_order_note(sprintf(__('Refunded %s - Refund ID: %s', 'woocommerce'), $amount, $result['refundId']));
+            return true;
+            
+        } catch (Exception $e) {
+            return new WP_Error(1, $e->getMessage());
+        }
+
+        return false;
     }
 
 }
