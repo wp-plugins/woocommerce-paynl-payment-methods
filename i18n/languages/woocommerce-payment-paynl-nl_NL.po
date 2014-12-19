@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: woocommerce-payment-paynl\n"
+"POT-Creation-Date: 2014-10-03 11:30+0100\n"
+"PO-Revision-Date: 2014-10-03 11:33+0100\n"
+"Last-Translator: Andy Pieters <andy@pay.nl>\n"
+"Language-Team: Pay.nl <support@pay.nl>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: C:\\vhosts\\woocommerce.dev.local\\www\\wp-content"
+"\\plugins\\woocommerce-paynl-payment-methods\n"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/woocommerce-payment-paynl.php:46
+msgid "The Pay.nl payment methods plugin requires woocommerce to be active"
+msgstr ""
+"De Pay.nl Betaalmethoden plugin vereist dat woocommerce is geactiveerd."
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:42
+msgid "The following payment methods can be enabled"
+msgstr "De volgende betaalmethoden kunnen worden geactiveerd"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:61
+msgid "Pay.nl settings"
+msgstr "Pay.nl instellingen"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:63
+msgid ""
+"The following options are required to use the Pay.nl Payment Gateway and are "
+"used by all Pay.nl Payment Methods"
+msgstr ""
+"De volgende instellingen zijn verplicht om de Pay.nl Gateway te gebruiken, "
+"en worden gebruikt door alle betaalmethoden"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:67
+msgid "Api token"
+msgstr "Api token"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:69
+msgid ""
+"The api token used to communicate with the Pay.nl API, you can find your "
+"token <a href=\"https://admin.pay.nl/my_merchant\" target=\"api_token"
+"\">here</a>"
+msgstr ""
+"Het API token dat moet worden gebruikt voor de Pay.nl API, Je kunt je api "
+"token <a href=\"https://admin.pay.nl/my_merchant\" target=\"api_token"
+"\">hier</a> vinden"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:73
+msgid "Service id"
+msgstr "Service id"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:75
+msgid ""
+"The serviceid to identify your website, you can find your serviceid <a href="
+"\"https://admin.pay.nl/programs/programs\" target=\"serviceid\">here</a>"
+msgstr ""
+"Het serviceid om jouw website te identificeren, je kan je serviceid <a href="
+"\"https://admin.pay.nl/programs/programs\" target=\"serviceid\">hier</a> "
+"vinden"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:77
+msgid "The serviceid should be in the following format: SL-xxxx-xxxx"
+msgstr "Het serviceid moet in het volgende formaat zijn: SL-xxxx-xxxx"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:80
+msgid "Send order data"
+msgstr "Order data versturen"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:82
+msgid ""
+"Check this box if you want to send the order data to pay.nl, this is "
+"required if you want to use afterpay"
+msgstr ""
+"Selecteer deze optie om order data naar Pay.nl te versturen, dit is "
+"verplicht indien u gebruik maakt van afterpay"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:87
+msgid "Payment screen language"
+msgstr "Betaalscherm taal"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:90
+msgid "Dutch"
+msgstr "Nederlands"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:91
+msgid "English"
+msgstr "Engels"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:92
+msgid "German"
+msgstr "Duits"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:93
+msgid "Spanish"
+msgstr "Spaans"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:94
+msgid "Italian"
+msgstr "Italiaans"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:95
+msgid "French"
+msgstr "Frans"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:98
+msgid "This is the language in which the paymetn screen will be shown"
+msgstr "De taal waarin het betaalscherm wordt weergegeven"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:103
+msgid "Bankselection"
+msgstr "Bankselectie"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:106
+msgid "No bankselection"
+msgstr "Geen bankselectie"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:107
+msgid "Selectbox"
+msgstr "Selectbox"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:108
+msgid "Radiobuttons"
+msgstr "Radiobuttons"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateways.php:110
+msgid "Pick the type of bankselection"
+msgstr "Kies het type bankselectie"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Setup.php:58
+msgid ""
+"Cannot activate Woocommerce Paynl Payment Methods because woocommerce is not "
+"found.<br />Please install and activate woocommerce first"
+msgstr ""
+"Kan de Woocommerce Pay.nl Betaalmethoden plugin niet activeren, omdat "
+"Woocomerce niet is gevonden.<br />Installeer en activeer a.u.b. Woocommerce "
+"eerst"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Setup.php:58
+msgid "Woocommerce not found"
+msgstr "Woocommerce niet gevonden"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateway/Abstract.php:30
+#, php-format
+msgid "Activate this module to accept %s transactions"
+msgstr "Activeer deze module om %s transacties te kunnen accepteren"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateway/Abstract.php:184
+#, php-format
+msgid "Pay.nl: Transaction started: %s"
+msgstr "Pay.nl: Transactie gestart: %s"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateway/Abstract.php:198
+msgid "Enable/Disable"
+msgstr "In/uitschakelen"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateway/Abstract.php:200
+#, php-format
+msgid "Enable Pay.nl %s"
+msgstr "Activeer Pay.nl %s"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateway/Abstract.php:204
+msgid "Title"
+msgstr "Titel"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateway/Abstract.php:206
+msgid "This controls the title which the user sees during checkout."
+msgstr "Hiermee bepaalt u de naam die de gebruiker ziet bij het afrekenen"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateway/Abstract.php:211
+msgid "Customer Message"
+msgstr "Gebruiker bericht"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Gateway/Abstract.php:213
+#, php-format
+msgid "Pay by %s"
+msgstr "Betalen met %s"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Helper/Transaction.php:93
+#, php-format
+msgid "Pay.nl: Payment complete. customerkey: %s"
+msgstr "Pay.nl: Betaling afgerond. klantkenmerk: %s"
+
+#: C:\vhosts\woocommerce.dev.local\www\wp-content\plugins\woocommerce-paynl-payment-methods/includes/classes/Pay/Helper/Transaction.php:99
+msgid "Pay.nl: Payment canceled"
+msgstr "Pay.nl: Betaling geannuleerd"
