@@ -60,7 +60,7 @@ class Pay_Helper_Transaction {
 
     public static function processTransaction($transactionId, $status = null) {
         global $woocommerce;        
-        $woocommerce->cart->empty_cart();
+        
 
        
         // we gaan eerst kijken naar de status
@@ -74,7 +74,7 @@ class Pay_Helper_Transaction {
         $order = new WC_Order($transaction['order_id']);
         if ($status == $transaction['status']) {
             if($status == Pay_Gateways::STATUS_CANCELED){
-                Pay_Helper_Cart::fillCartFromOrder($order);
+                //Pay_Helper_Cart::fillCartFromOrder($order);
                 return $woocommerce->cart->get_cart_url();
             }
             //update hoeft niet te worden doorgevoerd
@@ -100,6 +100,8 @@ class Pay_Helper_Transaction {
         // aan de hand van apistatus gaan we hem updaten
         switch ($apiStatus) {
             case Pay_Gateways::STATUS_SUCCESS:
+                $woocommerce->cart->empty_cart();
+                
                 // Remove cart
                 $order->payment_complete();
                 
@@ -108,10 +110,10 @@ class Pay_Helper_Transaction {
                 $url = self::getOrderReturnUrl($order);
                 break;
             case Pay_Gateways::STATUS_CANCELED:
-                $order->update_status('cancelled');
+                //$order->update_status('cancelled');
                 $order->add_order_note(__('Pay.nl: Payment canceled', 'woocommerce-payment-paynl'));
                 
-                Pay_Helper_Cart::fillCartFromOrder($order);
+                //Pay_Helper_Cart::fillCartFromOrder($order);
                 
                 $url = $woocommerce->cart->get_checkout_url();
                 break;

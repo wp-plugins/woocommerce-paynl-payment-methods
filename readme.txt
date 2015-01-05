@@ -92,6 +92,9 @@ Paid accounts have better tarriffs! see: [tariffs](http://pay.nl/tarieven)
 4. The iDEAL payment screen (Rabobank)
 
 == Changelog ==
+= 2.2.9 =
+* Removed cancel from the plugin to fix bugs refilling the cart
+
 = 2.2.8 =
 * Added refund support
 
