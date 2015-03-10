@@ -5,7 +5,7 @@ Link: http://www.pay.nl
 Tags: paynl, paymentmethods, woocommerce, ideal, paypal, creditcard, mybank, sofortbanking, afterpay, mistercash, bancontact, paysafecard, clickandbuy, giropay, incasso, betaalmethoden
 Requires at least: 3.0.1
 Stable tag: 2.2.9
-Tested up to: 4.1
+Tested up to: 4.1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,15 +31,18 @@ With Pay.nl you can add the following payment options to your website:
 * ClickandBuy
 * Mybank
 
-For the registration form, visit the registration page (in Dutch): [www.pay.nl/registreren](http://www.pay.nl/registreren)<br>
-For more information about the payment rates go to [www.pay.nl/tarieven](htp://www.pay.nl/tarieven)<br>
+For the registration form, visit the registration page (in Dutch): [www.pay.nl/registreren](http://www.pay.nl/registreren)
+For more information about the payment rates go to [www.pay.nl/tarieven](htp://www.pay.nl/tarieven)
 For more information about the payment solution packages, just visit [www.pay.nl/pakketten](http://www.pay.nl/pakketten)
+
+You can download the manual for this plugin (in Dutch) [here](http://www.pay.nl/plugin/woocommerce/pdf)
 
 For any further questions please send an email to support@pay.nl
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+This section describes in short how to install the plugin and get it working.
+If you need more help, you can download the manual [here](http://www.pay.nl/plugin/woocommerce/pdf) or send an email to [support@pay.nl](mailto:support@pay.nl)
 
 1. Install the plugin via Plugins -> new plugin
 2. Activate the plugin through the 'Plugins' menu in WordPress, the name of this plugin is: Woocommerce Pay.nl Payment Methods
@@ -53,7 +56,12 @@ This section describes how to install the plugin and get it working.
 
 You can register [here](http://pay.nl/registreren) (dutch and belgian companies only)
 
-= What payment methods are available through this plugin  =
+= Is there a manual available for this plugin? =
+
+Yes there is!
+You can download it [here](https://www.pay.nl/plugin/woocommerce/pdf)
+
+= What payment methods are available through this plugin?  =
 
 At the moment the plugin supports the following payment methods:
 
