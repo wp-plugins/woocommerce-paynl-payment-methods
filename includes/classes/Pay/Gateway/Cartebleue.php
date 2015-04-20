@@ -1,15 +1,15 @@
 <?php
 class Pay_Gateway_Cartebleue extends Pay_Gateway_Abstract {
 
-    public function getId() {
+    public static function getId() {
         return 'pay_gateway_cartebleue';
     }
 
-    public function getName() {
+    public static function getName() {
         return 'Carte Bleue';
     }
 
-    public function getOptionId() {
+    public static function getOptionId() {
         return 710;
     }
 

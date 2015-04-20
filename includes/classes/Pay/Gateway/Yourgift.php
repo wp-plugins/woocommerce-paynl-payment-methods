@@ -1,16 +1,17 @@
 <?php
-class Pay_Gateway_Incasso extends Pay_Gateway_Abstract {
+
+class Pay_Gateway_Yourgift extends Pay_Gateway_Abstract {
 
     public static function getId() {
-        return 'pay_gateway_incasso';
+        return 'pay_gateway_yourgift';
     }
 
     public static function getName() {
-        return 'Incasso';
+        return 'Yourgift';
     }
 
     public static function getOptionId() {
-        return 137;
+        return 1645;
     }
 
 }

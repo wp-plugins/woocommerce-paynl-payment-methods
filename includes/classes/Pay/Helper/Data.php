@@ -9,8 +9,10 @@ class Pay_Helper_Data{
         $api = new Pay_Api_Getservice();
         $api->setApiToken($apiToken);
         $api->setServiceId($serviceId);
-        
+      
+      
         $data = $api->doRequest();
+       
         
         $imageBasePath = $data['service']['basePath'];
         
@@ -25,7 +27,7 @@ class Pay_Helper_Data{
         
         foreach($paymentOptions as $paymentOption){
             $image = $imageBasePath . $paymentOption['path'] . $paymentOption['img'];
-            $wpdb->replace(
+            $wpdb->insert(
                         $table_name_options,
                         array(
                             'id' => $paymentOption['id'],
@@ -35,10 +37,10 @@ class Pay_Helper_Data{
                         ),
                         array('%d', '%s', '%s', '%s')
                     );
-            if(!empty($paymentOption['paymentOptionSubList'])){
+            if(!empty($paymentOption['paymentOptionSubList']) && $paymentOption['id'] == 10){
                 foreach($paymentOption['paymentOptionSubList'] as $paymentOptionSub){
                     $image = $imageBasePath . $paymentOptionSub['path'] . $paymentOptionSub['img'];
-                    $wpdb->replace(
+                    $wpdb->insert(
                                 $table_name_option_subs,
                                 array(
                                     'option_id' => $paymentOption['id'],
@@ -79,6 +81,7 @@ class Pay_Helper_Data{
     }
     public static function isOptionAvailable($optionId){
         global $wpdb;
+        
         $table_name_options = $wpdb->prefix . "pay_options";
         $query = $wpdb->prepare("SELECT id, name, image, update_date FROM $table_name_options WHERE id = %d", $optionId);
         

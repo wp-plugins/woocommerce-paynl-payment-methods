@@ -10,9 +10,10 @@ class Pay_Gateways {
       
         $paymentOptions = array(
             'Pay_Gateway_Afterpay',
-			'Pay_Gateway_Cartebleue',
+            'Pay_Gateway_Cartebleue',
             'Pay_Gateway_Clickandbuy',
-            'Pay_Gateway_Sofortbanking',
+            'Pay_Gateway_Fashioncheque',
+            'Pay_Gateway_Gezondheidsbon',            
             'Pay_Gateway_Giropay',
             'Pay_Gateway_Ideal',
             'Pay_Gateway_Incasso',
@@ -23,13 +24,16 @@ class Pay_Gateways {
             'Pay_Gateway_Overboeking',
             'Pay_Gateway_Paypal',
             'Pay_Gateway_Paysafecard',
-			'Pay_Gateway_Postepay',
+            'Pay_Gateway_Podiumcadeaukaart',
+            'Pay_Gateway_Postepay',
+            'Pay_Gateway_Sofortbanking',
             'Pay_Gateway_Visamastercard',
+            'Pay_Gateway_Yourgift',
         );
-        
-        $paymentOptions = array_merge($paymentOptions, $arrDefault);
+      
+        $arrDefault = array_merge($arrDefault, $paymentOptions);
      
-        return $paymentOptions;
+        return $arrDefault;
     }
 
     public static function _addGlobalSettings($settings) {

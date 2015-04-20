@@ -4,7 +4,7 @@ Donate link: https://www.pay.nl/webshops/plugin-woocommerce
 Link: http://www.pay.nl
 Tags: paynl, paymentmethods, woocommerce, ideal, paypal, creditcard, mybank, sofortbanking, afterpay, mistercash, bancontact, paysafecard, clickandbuy, giropay, incasso, betaalmethoden
 Requires at least: 3.0.1
-Stable tag: 2.2.9
+Stable tag: 2.3
 Tested up to: 4.1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,9 @@ With Pay.nl you can add the following payment options to your website:
 * PayPal
 * ClickandBuy
 * Mybank
+* Gezondheidsbon
+* Fashioncheque
+* Podiumcadeaukaart
 
 For the registration form, visit the registration page (in Dutch): [www.pay.nl/registreren](http://www.pay.nl/registreren)
 For more information about the payment rates go to [www.pay.nl/tarieven](htp://www.pay.nl/tarieven)
@@ -80,6 +83,9 @@ At the moment the plugin supports the following payment methods:
 * Paysafecard
 * Postepay
 * Visa/Mastercard
+* Gezondheidsbon
+* Fashioncheque
+* Podiumcadeaukaart
 
 = What does it cost? =
 
@@ -100,6 +106,11 @@ Paid accounts have better tarriffs! see: [tariffs](http://pay.nl/tarieven)
 4. The iDEAL payment screen (Rabobank)
 
 == Changelog ==
+= 2.3 =
+* Added new paymenbtmethods (Gezondheidsbon, Fashioncheque and podiumkadokaart)
+* Added a notice, in case CURL is not installed
+* Payment methods, that are not enabled in pay.nl cannot be activated in woocommerce
+* Vat was not sent to pay.nl correctly in the product lines
 = 2.2.9 =
 * Removed cancel from the plugin to fix bugs refilling the cart
 

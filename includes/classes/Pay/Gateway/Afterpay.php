@@ -2,15 +2,15 @@
 
 class Pay_Gateway_Afterpay extends Pay_Gateway_Abstract {
 
-    public function getId() {
+    public static function getId() {
         return 'pay_gateway_afterpay';
     }
 
-    public function getName() {
+    public static function getName() {
         return 'Afterpay';
     }
 
-    public function getOptionId() {
+    public static function getOptionId() {
         return 739;
     }
 

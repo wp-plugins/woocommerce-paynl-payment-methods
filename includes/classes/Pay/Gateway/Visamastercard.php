@@ -1,15 +1,15 @@
 <?php
 class Pay_Gateway_Visamastercard extends Pay_Gateway_Abstract {
 
-    public function getId() {
+    public static function getId() {
         return 'pay_gateway_visamastercard';
     }
 
-    public function getName() {
+    public static function getName() {
         return 'Visa/Mastercard';
     }
 
-    public function getOptionId() {
+    public static function getOptionId() {
         return 706;
     }
 

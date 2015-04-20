@@ -1,15 +1,15 @@
 <?php
 class Pay_Gateway_Directebankingat extends Pay_Gateway_Abstract {
 
-    public function getId() {
+    public static function getId() {
         return 'pay_gateway_directebankingat';
     }
 
-    public function getName() {
+    public static function getName() {
         return 'Sofortbanking Oostenrijk';
     }
 
-    public function getOptionId() {
+    public static function getOptionId() {
         return 568;
     }
 

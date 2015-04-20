@@ -1,15 +1,15 @@
 <?php
 class Pay_Gateway_Paysafecard extends Pay_Gateway_Abstract {
 
-    public function getId() {
+    public static function getId() {
         return 'pay_gateway_paysafecard';
     }
 
-    public function getName() {
+    public static function getName() {
         return 'Paysafecard';
     }
 
-    public function getOptionId() {
+    public static function getOptionId() {
         return 553;
     }
 

@@ -2,11 +2,17 @@
 
 abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
 
-    public abstract function getId();
+    public static function getId() {
+        throw new Exception('Please implement the getId method');
+    }
 
-    public abstract function getName();
+    public static function getName() {
+        throw new Exception('Please implement the getName method');
+    }
 
-    public abstract function getOptionId();
+    public static function getOptionId() {
+        throw new Exception('Please implement the getOptionId method');
+    }
 
     public static function getApiToken() {
         return get_option('paynl_apitoken');
@@ -104,7 +110,7 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
         }
 
         if (get_option('paynl_send_order_data') == true) {
-            // order gegevens ophalen     
+            // order gegevens ophalen
             $shippingAddress = $order->shipping_address_1 . ' ' . $order->shipping_address_2;
             $arrShippingAddress = explode(' ', trim($shippingAddress));
             $shippingHousenumber = array_pop($arrShippingAddress);
@@ -118,7 +124,7 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
             $billingStreet = implode(' ', $arrBillingAddress);
 
             $arrEnduser = array(
-                'initials' => substr($order->shipping_first_name, 0, 10),
+                'initials' => substr($order->shipping_first_name, 0, 1),
                 'lastName' => $order->shipping_last_name,
                 'emailAddress' => $order->billing_email,
                 'address' => array(
@@ -129,7 +135,7 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
                     'countryCode' => $order->shipping_country
                 ),
                 'invoiceAddress' => array(
-                    'initials' => substr($order->billing_first_name, 0, 10),
+                    'initials' => substr($order->billing_first_name, 0, 1),
                     'lastName' => $order->billing_last_name,
                     'streetName' => $billingStreet,
                     'streetNumber' => $billingHousenumber,
@@ -149,7 +155,7 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
             $totalFromLines = 0;
 
             foreach ($items as $item) {
-                $pricePerPiece = round(($item['line_total'] / $item['qty']) * 100);
+                $pricePerPiece = round((($item['line_total'] + $item['line_tax']) / $item['qty']) * 100);
                 $totalFromLines += $pricePerPiece * $item['qty'];
 
                 $api->addProduct($item['product_id'], $item['name'], $pricePerPiece, $item['qty'], 0);
@@ -194,13 +200,27 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
         );
     }
 
+    public function admin_options() {
+        $optionId = $this->getOptionId();
+        if (Pay_Helper_Data::isOptionAvailable($optionId)) {
+            parent::admin_options();
+        } else {
+            ?>
+            <h3><?php echo (!empty($this->method_title) ) ? $this->method_title : __('Settings', 'woocommerce'); ?></h3>
+
+            <?php
+            
+            echo __('This payment method is not available, please enable this in the pay.nl admin.', 'woocommerce-payment-paynl');
+        }
+    }
+
     public function init_settings() {
         $this->form_fields = array(
             'enabled' => array(
                 'title' => __('Enable/Disable', 'woocommerce'),
                 'type' => 'checkbox',
                 'label' => sprintf(__('Enable Pay.nl %s', 'woocommerce-payment-paynl'), $this->getName()),
-                'default' => 'no'
+                'default' => 'no',
             ),
             'title' => array(
                 'title' => __('Title', 'woocommerce'),
@@ -212,9 +232,10 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
             'description' => array(
                 'title' => __('Customer Message', 'woocommerce'),
                 'type' => 'textarea',
-                'default' => sprintf(__('Pay by %s', 'woocommerce-payment-paynl'), $this->getName()),
+                'default' => sprintf(__('Pay with %s', 'woocommerce-payment-paynl'), $this->getName()),
             )
         );
+
         parent::init_settings();
     }
 
@@ -245,10 +266,9 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
             $refundApi->setDescription($reason);
 
             $result = $refundApi->doRequest();
-            
+
             $order->add_order_note(sprintf(__('Refunded %s - Refund ID: %s', 'woocommerce'), $amount, $result['refundId']));
             return true;
-            
         } catch (Exception $e) {
             return new WP_Error(1, $e->getMessage());
         }

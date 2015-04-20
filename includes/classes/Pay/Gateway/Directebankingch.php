@@ -1,15 +1,15 @@
 <?php
 class Pay_Gateway_Directebankingch extends Pay_Gateway_Abstract {
 
-    public function getId() {
+    public static function getId() {
         return 'pay_gateway_directebankingch';
     }
 
-    public function getName() {
+    public static function getName() {
         return 'Sofortbanking Zwitserland';
     }
 
-    public function getOptionId() {
+    public static function getOptionId() {
         return 571;
     }
 

@@ -1,15 +1,15 @@
 <?php
 class Pay_Gateway_Overboeking extends Pay_Gateway_Abstract {
 
-    public function getId() {
+    public static function getId() {
         return 'pay_gateway_overboeking';
     }
 
-    public function getName() {
+    public static function getName() {
         return 'Overboeking';
     }
 
-    public function getOptionId() {
+    public static function getOptionId() {
         return 136;
     }
 

@@ -1,15 +1,15 @@
 <?php
 class Pay_Gateway_Mistercash extends Pay_Gateway_Abstract {
 
-    public function getId() {
+    public static function getId() {
         return 'pay_gateway_mistercash';
     }
 
-    public function getName() {
+    public static function getName() {
         return 'MisterCash / Bancontact';
     }
 
-    public function getOptionId() {
+    public static function getOptionId() {
         return 436;
     }
 
