@@ -4,8 +4,8 @@ Donate link: https://www.pay.nl/webshops/plugin-woocommerce
 Link: http://www.pay.nl
 Tags: paynl, paymentmethods, woocommerce, ideal, paypal, creditcard, mybank, sofortbanking, afterpay, mistercash, bancontact, paysafecard, clickandbuy, giropay, incasso, betaalmethoden
 Requires at least: 3.0.1
-Stable tag: 2.3
-Tested up to: 4.1.1
+Stable tag: 2.3.1
+Tested up to: 4.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,9 @@ Paid accounts have better tarriffs! see: [tariffs](http://pay.nl/tarieven)
 4. The iDEAL payment screen (Rabobank)
 
 == Changelog ==
+= 2.3.1 = 
+* Updated the translations
+* Tested with wordpress 4.2
 = 2.3 =
 * Added new paymenbtmethods (Gezondheidsbon, Fashioncheque and podiumkadokaart)
 * Added a notice, in case CURL is not installed
@@ -138,5 +141,6 @@ Paid accounts have better tarriffs! see: [tariffs](http://pay.nl/tarieven)
 
 = 2.2.1 =
 * Compatible with wordpress 2.2
+
 
 
