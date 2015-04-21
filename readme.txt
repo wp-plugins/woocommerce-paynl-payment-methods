@@ -110,7 +110,7 @@ Paid accounts have better tarriffs! see: [tariffs](http://pay.nl/tarieven)
 * Updated the translations
 * Tested with wordpress 4.2
 = 2.3 =
-* Added new paymenbtmethods (Gezondheidsbon, Fashioncheque and podiumkadokaart)
+* Added new paymentmethods (Gezondheidsbon, Fashioncheque and podiumkadokaart)
 * Added a notice, in case CURL is not installed
 * Payment methods, that are not enabled in pay.nl cannot be activated in woocommerce
 * Vat was not sent to pay.nl correctly in the product lines
