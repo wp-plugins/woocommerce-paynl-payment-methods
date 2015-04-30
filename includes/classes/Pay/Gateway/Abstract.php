@@ -163,7 +163,7 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
 
             //verzendkosten en korting meenemen
             $discount = $order->get_total_discount(false);
-            $shipping = $order->get_total_shipping()+$order->get_shipping_tax();
+            $shipping = $order->get_total_shipping() + $order->get_shipping_tax();
 
             //Kortingen verrekenen
             if ($discount != 0) {
@@ -209,7 +209,6 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
             <h3><?php echo (!empty($this->method_title) ) ? $this->method_title : __('Settings', 'woocommerce'); ?></h3>
 
             <?php
-            
             echo __('This payment method is not available, please enable this in the pay.nl admin.', 'woocommerce-payment-paynl');
         }
     }
@@ -233,8 +232,18 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
                 'title' => __('Customer Message', 'woocommerce'),
                 'type' => 'textarea',
                 'default' => sprintf(__('Pay with %s', 'woocommerce-payment-paynl'), $this->getName()),
-            )
+            ),
+            'instructions' => array(
+                'title' => __('Instructions', 'woocommerce'),
+                'type' => 'textarea',
+                'description' => __('Instructions that will be added to the thank you page.', 'woocommerce'),
+                'default' => '',
+                'desc_tip' => true,
+            ),
         );
+
+        add_action('woocommerce_thankyou_' . $this->getId(), array($this, 'thankyou_page'));
+        
 
         parent::init_settings();
     }
@@ -274,6 +283,14 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
         }
 
         return false;
+    }
+
+    /**
+     * Output for the order received page.
+     */
+    public function thankyou_page() {
+        if ($this->get_option('instructions'))
+            echo wpautop(wptexturize($this->get_option('instructions')));
     }
 
 }
