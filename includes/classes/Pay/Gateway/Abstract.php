@@ -155,15 +155,15 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
             $totalFromLines = 0;
 
             foreach ($items as $item) {
-                $pricePerPiece = round((($item['line_total'] + $item['line_tax']) / $item['qty']) * 100);
+                $pricePerPiece = round((($item['line_subtotal'] + $item['line_subtotal_tax']) / $item['qty']) * 100);
                 $totalFromLines += $pricePerPiece * $item['qty'];
 
                 $api->addProduct($item['product_id'], $item['name'], $pricePerPiece, $item['qty'], 0);
             }
 
             //verzendkosten en korting meenemen
-            $discount = $order->get_total_discount();
-            $shipping = $order->get_total_shipping();
+            $discount = $order->get_total_discount(false);
+            $shipping = $order->get_total_shipping()+$order->get_shipping_tax();
 
             //Kortingen verrekenen
             if ($discount != 0) {
