@@ -1,0 +1,220 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Woocommerce Pay.nl Payment Methods\n"
+"POT-Creation-Date: 2015-04-21 16:38+0100\n"
+"PO-Revision-Date: 2015-04-21 16:48+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/classes/Pay/Gateway/Abstract.php:36
+#, php-format
+msgid "Activate this module to accept %s transactions"
+msgstr "Activeer deze module om %s betalingen te accepteren"
+
+#: includes/classes/Pay/Gateway/Abstract.php:192
+#, php-format
+msgid "Pay.nl: Transaction started: %s"
+msgstr "Pay.nl: Transactie gestart, TransactieId: %s"
+
+#: includes/classes/Pay/Gateway/Abstract.php:209
+msgid "Settings"
+msgstr "Instellingen"
+
+#: includes/classes/Pay/Gateway/Abstract.php:213
+msgid ""
+"This payment method is not available, please enable this in the pay.nl admin."
+msgstr ""
+"Deze betaalmethode is niet beschikbaar, schakel deze in op admin.pay.nl"
+
+#: includes/classes/Pay/Gateway/Abstract.php:220
+msgid "Enable/Disable"
+msgstr "Inschakelen/uitschakelen"
+
+#: includes/classes/Pay/Gateway/Abstract.php:222
+#, php-format
+msgid "Enable Pay.nl %s"
+msgstr "Pay.nl %s inschakelen"
+
+#: includes/classes/Pay/Gateway/Abstract.php:226
+msgid "Title"
+msgstr "Titel"
+
+#: includes/classes/Pay/Gateway/Abstract.php:228
+msgid "This controls the title which the user sees during checkout."
+msgstr "Hier stel je de titel in die de klant tijdens het afrekenen ziet"
+
+#: includes/classes/Pay/Gateway/Abstract.php:233
+msgid "Customer Message"
+msgstr "Klant bericht"
+
+#: includes/classes/Pay/Gateway/Abstract.php:235
+#, php-format
+msgid "Pay with %s"
+msgstr "Betaal met %s"
+
+#: includes/classes/Pay/Gateway/Abstract.php:270
+#, php-format
+msgid "Refunded %s - Refund ID: %s"
+msgstr "Terugbetaald %s - Refund id: %s"
+
+#: includes/classes/Pay/Gateways.php:46
+msgid "The following payment methods can be enabled"
+msgstr "De volgende betaalmethoden kunnen worden ingeschakeld"
+
+#: includes/classes/Pay/Gateways.php:65
+msgid "Pay.nl settings"
+msgstr "Pay.nl instellingen"
+
+#: includes/classes/Pay/Gateways.php:67
+msgid ""
+"The following options are required to use the Pay.nl Payment Gateway and are "
+"used by all Pay.nl Payment Methods"
+msgstr ""
+"De volgende instellingen zijn benodigd om de Pay.nl betaalmethoden te kunnen "
+"gebruiken, en worden door alle betaalmethoden van Pay.nl gebruikt."
+
+#: includes/classes/Pay/Gateways.php:71
+msgid "Api token"
+msgstr "API token"
+
+#: includes/classes/Pay/Gateways.php:73
+msgid ""
+"The api token used to communicate with the Pay.nl API, you can find your "
+"token <a href=\"https://admin.pay.nl/my_merchant\" target=\"api_token"
+"\">here</a>"
+msgstr ""
+"Het API token wordt gebruikt om met de API van Pay.nl de communiceren, je "
+"kunt je API token <a href=\"https://admin.pay.nl/my_merchant\" target="
+"\"api_token\">hier</a> vinden"
+
+#: includes/classes/Pay/Gateways.php:77
+msgid "Service id"
+msgstr "Service id"
+
+#: includes/classes/Pay/Gateways.php:79
+msgid ""
+"The serviceid to identify your website, you can find your serviceid <a href="
+"\"https://admin.pay.nl/programs/programs\" target=\"serviceid\">here</a>"
+msgstr ""
+"Het serviceId is de SL-code van je dienst, en wordt gebruikt om de "
+"betalingen aan de juiste dienst te koppelen. Je kunt je serviceId <a href="
+"\"https://admin.pay.nl/programs/programs\" target=\"serviceid\">hier</a> "
+"vinden."
+
+#: includes/classes/Pay/Gateways.php:81
+msgid "The serviceid should be in the following format: SL-xxxx-xxxx"
+msgstr "Het serviceId moet in het volgende formaat zijn: SL-xxxx-xxxx"
+
+#: includes/classes/Pay/Gateways.php:84
+msgid "Send order data"
+msgstr "Bestellingsgegevens versturen"
+
+#: includes/classes/Pay/Gateways.php:86
+msgid ""
+"Check this box if you want to send the order data to pay.nl, this is "
+"required if you want to use afterpay"
+msgstr ""
+"Schakel deze optie in, om de bestellingsgegevens naar Pay.nl te versturen. "
+"Wanneer u gebruik maakt van afterpay is dit verplicht"
+
+#: includes/classes/Pay/Gateways.php:91
+msgid "Payment screen language"
+msgstr "Betaalscherm taal"
+
+#: includes/classes/Pay/Gateways.php:94
+msgid "Dutch"
+msgstr "Nederlands"
+
+#: includes/classes/Pay/Gateways.php:95
+msgid "English"
+msgstr "Engels"
+
+#: includes/classes/Pay/Gateways.php:96
+msgid "German"
+msgstr "Duits"
+
+#: includes/classes/Pay/Gateways.php:97
+msgid "Spanish"
+msgstr "Spaans"
+
+#: includes/classes/Pay/Gateways.php:98
+msgid "Italian"
+msgstr "Italiaans"
+
+#: includes/classes/Pay/Gateways.php:99
+msgid "French"
+msgstr "Frans"
+
+#: includes/classes/Pay/Gateways.php:102
+msgid "This is the language in which the paymetn screen will be shown"
+msgstr "Dit is de taal waarin het betaalscherm wordt getoond"
+
+#: includes/classes/Pay/Gateways.php:107
+msgid "Bankselection"
+msgstr "Bankselectie"
+
+#: includes/classes/Pay/Gateways.php:110
+msgid "No bankselection"
+msgstr "Geen bankselectie"
+
+#: includes/classes/Pay/Gateways.php:111
+msgid "Selectbox"
+msgstr "Selectbox"
+
+#: includes/classes/Pay/Gateways.php:112
+msgid "Radiobuttons"
+msgstr "RadioButtons"
+
+#: includes/classes/Pay/Gateways.php:114
+msgid "Pick the type of bankselection"
+msgstr "Kies het type van bankselectie"
+
+#: includes/classes/Pay/Helper/Transaction.php:108
+#, php-format
+msgid "Pay.nl: Payment complete. customerkey: %s"
+msgstr "Pay.nl: Betaling voltooid. customerkey: %s"
+
+#: includes/classes/Pay/Helper/Transaction.php:114
+msgid "Pay.nl: Payment canceled"
+msgstr "Pay.nl: Betaling geannuleerd"
+
+#: includes/classes/Pay/Setup.php:58
+msgid ""
+"Cannot activate Woocommerce Paynl Payment Methods because woocommerce is not "
+"found.<br />Please install and activate woocommerce first"
+msgstr ""
+"Paynl betalingsmethoden kan niet worden gactiveerd omdat woocommerce niet "
+"kan worden gevonden.<br/>Installeer en activeer woocommerce eerst"
+
+#: includes/classes/Pay/Setup.php:59
+msgid "Woocommerce not found"
+msgstr "Woocommerce niet gevonden"
+
+#: woocommerce-payment-paynl.php:24
+msgid "The Pay.nl payment methods plugin requires woocommerce to be active"
+msgstr ""
+"Om de Pay.nl betaalmethoden te kunnen gebruiken, moet woocommerce "
+"geactiveerd zijn"
+
+#: woocommerce-payment-paynl.php:27
+msgid ""
+"Curl is not installed.<br />In order to use the Pay.nl payment methods, you "
+"must install install CURL.<br />Ask your system administrator to install "
+"php_curl"
+msgstr ""
+"Curl is niet geinstalleerd.<br />Om Pay.nl betaalmethoden te kunnen "
+"gebruiken, moet CURL geinstalleerd zijn.<br />Vraag je systeembeheerder op "
+"php_curl te installeren."
