@@ -106,6 +106,8 @@ Paid accounts have better tarriffs! see: [tariffs](http://pay.nl/tarieven)
 4. The iDEAL payment screen (Rabobank)
 
 == Changelog ==
+= 2.3.4 = 
+* Updated the way the ip address is fetched, in case a loadbalancer or proxy is used
 = 2.3.3 = 
 * Added instructions to that can be shown on the thank you page
 = 2.3.2 = 
