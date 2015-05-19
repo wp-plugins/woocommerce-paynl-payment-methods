@@ -220,7 +220,7 @@ class Pay_Api_Start extends Pay_Api {
         
         
         //ip en browserdata setten
-        $data['ipAddress'] = $_SERVER['REMOTE_ADDR'];
+        $data['ipAddress'] = Pay_Helper_Data::getIp();
         $data['browserData'] = array(
             'browser_name_regex' => '^mozilla/5\.0 (windows; .; windows nt 5\.1; .*rv:.*) gecko/.* firefox/0\.9.*$',
             'browser_name_pattern' => 'Mozilla/5.0 (Windows; ?; Windows NT 5.1; *rv:*) Gecko/* Firefox/0.9*',
