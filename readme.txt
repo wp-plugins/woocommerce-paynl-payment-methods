@@ -106,7 +106,11 @@ Paid accounts have better tarriffs! see: [tariffs](http://pay.nl/tarieven)
 4. The iDEAL payment screen (Rabobank)
 
 == Changelog ==
-= 2.3.4 = 
+= 2.3.5 =
+* Added payment method 'Pay by phone'
+* Fixed a problem where a payment method could not be disabled, when first disabled in the pay.nl admin
+* Fixed a problem with ipv6 addresses
+= 2.3.4 =
 * Updated the way the ip address is fetched, in case a loadbalancer or proxy is used
 = 2.3.3 = 
 * Added instructions to that can be shown on the thank you page

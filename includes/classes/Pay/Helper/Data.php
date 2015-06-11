@@ -1,35 +1,40 @@
 <?php
 
-class Pay_Helper_Data {
+class Pay_Helper_Data
+{
 
-    public static function getIp() {
+    public static function getIp()
+    {
 
         //Just get the headers if we can or else use the SERVER global
-        if (function_exists('apache_request_headers')) {
-
+        if (function_exists('apache_request_headers'))
+        {
             $headers = apache_request_headers();
-        } else {
-
+        } else
+        {
             $headers = $_SERVER;
         }
-
         //Get the forwarded IP if it exists
-        if (array_key_exists('X-Forwarded-For', $headers) && filter_var($headers['X-Forwarded-For'], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
-
+        if (array_key_exists('X-Forwarded-For', $headers))
+        {
             $the_ip = $headers['X-Forwarded-For'];
-        } elseif (array_key_exists('HTTP_X_FORWARDED_FOR', $headers) && filter_var($headers['HTTP_X_FORWARDED_FOR'], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)
-        ) {
-
+        } elseif (array_key_exists('HTTP_X_FORWARDED_FOR', $headers))
+        {
             $the_ip = $headers['HTTP_X_FORWARDED_FOR'];
-        } else {
-
-            $the_ip = filter_var($_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);
+        } else
+        {
+            $the_ip = $_SERVER['REMOTE_ADDR'];
         }
+        $arrIp = explode(',', $the_ip);
+        $the_ip = $arrIp[0];
+
+        $the_ip = filter_var(trim($the_ip), FILTER_VALIDATE_IP);
 
         return $the_ip;
     }
 
-    public static function loadPaymentMethods() {
+    public static function loadPaymentMethods()
+    {
         global $wpdb;
 
         $apiToken = Pay_Gateway_Abstract::getApiToken();
@@ -54,7 +59,8 @@ class Pay_Helper_Data {
         $wpdb->query('TRUNCATE TABLE ' . $table_name_option_subs);
         $wpdb->query('TRUNCATE TABLE ' . $table_name_options);
 
-        foreach ($paymentOptions as $paymentOption) {
+        foreach ($paymentOptions as $paymentOption)
+        {
             $image = $imageBasePath . $paymentOption['path'] . $paymentOption['img'];
             $wpdb->insert(
                     $table_name_options, array(
@@ -64,8 +70,10 @@ class Pay_Helper_Data {
                 'update_date' => current_time('mysql'),
                     ), array('%d', '%s', '%s', '%s')
             );
-            if (!empty($paymentOption['paymentOptionSubList']) && $paymentOption['id'] == 10) {
-                foreach ($paymentOption['paymentOptionSubList'] as $paymentOptionSub) {
+            if (!empty($paymentOption['paymentOptionSubList']) && $paymentOption['id'] == 10)
+            {
+                foreach ($paymentOption['paymentOptionSubList'] as $paymentOptionSub)
+                {
                     $image = $imageBasePath . $paymentOptionSub['path'] . $paymentOptionSub['img'];
                     $wpdb->insert(
                             $table_name_option_subs, array(
@@ -81,7 +89,8 @@ class Pay_Helper_Data {
         }
     }
 
-    public static function getOptions() {
+    public static function getOptions()
+    {
         global $wpdb;
 
         $table_name_options = $wpdb->prefix . "pay_options";
@@ -92,7 +101,8 @@ class Pay_Helper_Data {
         return $options;
     }
 
-    public static function getOptionSubs($optionId) {
+    public static function getOptionSubs($optionId)
+    {
         global $wpdb;
 
         $table_name_option_subs = $wpdb->prefix . "pay_option_subs";
@@ -106,7 +116,8 @@ class Pay_Helper_Data {
         return $optionSubs;
     }
 
-    public static function isOptionAvailable($optionId) {
+    public static function isOptionAvailable($optionId)
+    {
         global $wpdb;
 
         $table_name_options = $wpdb->prefix . "pay_options";

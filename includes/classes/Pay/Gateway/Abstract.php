@@ -1,32 +1,40 @@
 <?php
 
-abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
+abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway
+{
 
-    public static function getId() {
+    public static function getId()
+    {
         throw new Exception('Please implement the getId method');
     }
 
-    public static function getName() {
+    public static function getName()
+    {
         throw new Exception('Please implement the getName method');
     }
 
-    public static function getOptionId() {
+    public static function getOptionId()
+    {
         throw new Exception('Please implement the getOptionId method');
     }
 
-    public static function getApiToken() {
+    public static function getApiToken()
+    {
         return get_option('paynl_apitoken');
     }
 
-    public static function getServiceId() {
+    public static function getServiceId()
+    {
         return get_option('paynl_serviceid');
     }
 
-    public function getIcon() {
+    public function getIcon()
+    {
         return 'https://admin.pay.nl/images/payment_profiles/' . $this->getOptionId() . '.gif';
     }
 
-    public function __construct() {
+    public function __construct()
+    {
 
         $this->id = $this->getId();
         $this->icon = $this->getIcon();
@@ -45,7 +53,8 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
         add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
     }
 
-    public function payment_fields() {
+    public function payment_fields()
+    {
         //velden bankselectie ideal
         $optionSubs = Pay_Helper_Data::getOptionSubs($this->getOptionId());
         $description = $this->get_option('description');
@@ -53,26 +62,31 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
 
         $selectionType = get_option('paynl_bankselection');
 
-        if ($this->getOptionId() == 10 && !empty($optionSubs) && $selectionType != 'none') {
-            if ($selectionType == 'select') {
+        if ($this->getOptionId() == 10 && !empty($optionSubs) && $selectionType != 'none')
+        {
+            if ($selectionType == 'select')
+            {
                 ?>
                 <p>
                     <select name="option_sub_id">
-                        <?php
-                        foreach ($optionSubs as $optionSub) {
-                            echo '<option value="' . $optionSub['option_sub_id'] . '">' . $optionSub['name'] . '</option>';
-                        }
-                        ?>                   
+                    <?php
+                    foreach ($optionSubs as $optionSub)
+                    {
+                        echo '<option value="' . $optionSub['option_sub_id'] . '">' . $optionSub['name'] . '</option>';
+                    }
+                    ?>                   
                     </select>
                 </p>
-            <?php } elseif ($selectionType == 'radio') {
+            <?php } elseif ($selectionType == 'radio')
+            {
                 ?>
                 <ul style="border:none;width:400px;list-style: none;">
-                    <?php
-                    foreach ($optionSubs as $optionSub) {
-                        echo '<li style="float: left; width: 200px;"><label><input type="radio" name="option_sub_id" value="' . $optionSub['option_sub_id'] . '" />&nbsp;<img src="' . $optionSub['image'] . '" alt="' . $optionSub['name'] . '" title="' . $optionSub['name'] . '" /></label></li>';
-                    }
-                    ?>
+                <?php
+                foreach ($optionSubs as $optionSub)
+                {
+                    echo '<li style="float: left; width: 200px;"><label><input type="radio" name="option_sub_id" value="' . $optionSub['option_sub_id'] . '" />&nbsp;<img src="' . $optionSub['image'] . '" alt="' . $optionSub['name'] . '" title="' . $optionSub['name'] . '" /></label></li>';
+                }
+                ?>
                 </ul>
                 <div class="clear"></div>
                 <?php
@@ -80,7 +94,8 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
         }
     }
 
-    public function process_payment($order_id) {
+    public function process_payment($order_id)
+    {
         /** @var $wpdb wpdb The database */
         global $wpdb;
         global $woocommerce;
@@ -105,11 +120,13 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
         $api->setCurrency($order->get_order_currency());
         $api->setPaymentOptionId($this->getOptionId());
 
-        if (isset($_POST['option_sub_id'])) {
+        if (isset($_POST['option_sub_id']))
+        {
             $api->setPaymentOptionSubId($_POST['option_sub_id']);
         }
 
-        if (get_option('paynl_send_order_data') == true) {
+        if (get_option('paynl_send_order_data') == true)
+        {
             // order gegevens ophalen
             $shippingAddress = $order->shipping_address_1 . ' ' . $order->shipping_address_2;
             $arrShippingAddress = explode(' ', trim($shippingAddress));
@@ -154,7 +171,8 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
 
             $totalFromLines = 0;
 
-            foreach ($items as $item) {
+            foreach ($items as $item)
+            {
                 $pricePerPiece = round((($item['line_subtotal'] + $item['line_subtotal_tax']) / $item['qty']) * 100);
                 $totalFromLines += $pricePerPiece * $item['qty'];
 
@@ -166,13 +184,15 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
             $shipping = $order->get_total_shipping() + $order->get_shipping_tax();
 
             //Kortingen verrekenen
-            if ($discount != 0) {
+            if ($discount != 0)
+            {
                 $totalDiscount = round($discount * -100);
                 $api->addProduct('DISCOUNT', 'Korting', $totalDiscount, 1, 0);
                 $totalFromLines += $totalDiscount;
             }
             //verzendkosten verrekenen
-            if ($shipping != 0) {
+            if ($shipping != 0)
+            {
                 $totalShipping = round($shipping * 100);
                 $api->addProduct('SHIPPING', 'Verzendkosten', $totalShipping, 1, 0);
                 $totalFromLines += $totalShipping;
@@ -181,7 +201,8 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
             // Nu heb ik alles meegestuurd wat ik weet, er kan door afrondingsverschillen of door andere plugins een verschil ontstaan.
             // Daarom stuur ik het verschil tussen de rijtotalen en het totaal mee als correctieregel
             $correction = $amount - $totalFromLines;
-            if ($correction != 0) {
+            if ($correction != 0)
+            {
                 //een correctieregel is nodig
                 $api->addProduct('CORRECTION', 'Correctieregel', $correction, 1, 0);
             }
@@ -200,50 +221,54 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
         );
     }
 
-    public function admin_options() {
+
+    public function init_settings()
+    {
         $optionId = $this->getOptionId();
-        if (Pay_Helper_Data::isOptionAvailable($optionId)) {
-            parent::admin_options();
-        } else {
-            ?>
-            <h3><?php echo (!empty($this->method_title) ) ? $this->method_title : __('Settings', 'woocommerce'); ?></h3>
-
-            <?php
-            echo __('This payment method is not available, please enable this in the pay.nl admin.', 'woocommerce-payment-paynl');
+        if (Pay_Helper_Data::isOptionAvailable($optionId))
+        {
+            $this->form_fields = array(
+                'enabled' => array(
+                    'title' => __('Enable/Disable', 'woocommerce'),
+                    'type' => 'checkbox',
+                    'label' => sprintf(__('Enable Pay.nl %s', 'woocommerce-payment-paynl'), $this->getName()),
+                    'default' => 'no',
+                ),
+                'title' => array(
+                    'title' => __('Title', 'woocommerce'),
+                    'type' => 'text',
+                    'description' => __('This controls the title which the user sees during checkout.', 'woocommerce'),
+                    'default' => $this->getName(),
+                    'desc_tip' => true,
+                ),
+                'description' => array(
+                    'title' => __('Customer Message', 'woocommerce'),
+                    'type' => 'textarea',
+                    'default' => sprintf(__('Pay with %s', 'woocommerce-payment-paynl'), $this->getName()),
+                ),
+                'instructions' => array(
+                    'title' => __('Instructions', 'woocommerce'),
+                    'type' => 'textarea',
+                    'description' => __('Instructions that will be added to the thank you page.', 'woocommerce'),
+                    'default' => '',
+                    'desc_tip' => true,
+                ),
+            );
+        } else
+        {
+            $this->form_fields = array(
+                'message' => array(
+                    'title' => __('Disabled', 'woocommerce'),
+                    'type' => 'hidden',
+                    'description' => __('This payment method is not available, please enable this in the pay.nl admin.', 'woocommerce-payment-paynl'),
+                    'label' => sprintf(__('Enable Pay.nl %s', 'woocommerce-payment-paynl'), $this->getName()),
+           
+                )
+            );
         }
-    }
-
-    public function init_settings() {
-        $this->form_fields = array(
-            'enabled' => array(
-                'title' => __('Enable/Disable', 'woocommerce'),
-                'type' => 'checkbox',
-                'label' => sprintf(__('Enable Pay.nl %s', 'woocommerce-payment-paynl'), $this->getName()),
-                'default' => 'no',
-            ),
-            'title' => array(
-                'title' => __('Title', 'woocommerce'),
-                'type' => 'text',
-                'description' => __('This controls the title which the user sees during checkout.', 'woocommerce'),
-                'default' => $this->getName(),
-                'desc_tip' => true,
-            ),
-            'description' => array(
-                'title' => __('Customer Message', 'woocommerce'),
-                'type' => 'textarea',
-                'default' => sprintf(__('Pay with %s', 'woocommerce-payment-paynl'), $this->getName()),
-            ),
-            'instructions' => array(
-                'title' => __('Instructions', 'woocommerce'),
-                'type' => 'textarea',
-                'description' => __('Instructions that will be added to the thank you page.', 'woocommerce'),
-                'default' => '',
-                'desc_tip' => true,
-            ),
-        );
 
         add_action('woocommerce_thankyou_' . $this->getId(), array($this, 'thankyou_page'));
-        
+
 
         parent::init_settings();
     }
@@ -255,16 +280,19 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
      * @param  string $reason
      * @return  bool|wp_error True or false based on success, or a WP_Error object
      */
-    public function process_refund($order_id, $amount = null, $reason = '') {
+    public function process_refund($order_id, $amount = null, $reason = '')
+    {
         $order = wc_get_order($order_id);
 
         $transactionId = Pay_Helper_Transaction::getPaidTransactionIdForOrderId($order_id);
 
-        if (!$order || !$transactionId) {
+        if (!$order || !$transactionId)
+        {
             return false;
         }
 
-        try {
+        try
+        {
             $refundApi = new Pay_Api_Refund();
 
             $refundApi->setApiToken($this->getApiToken());
@@ -278,7 +306,8 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
 
             $order->add_order_note(sprintf(__('Refunded %s - Refund ID: %s', 'woocommerce'), $amount, $result['refundId']));
             return true;
-        } catch (Exception $e) {
+        } catch (Exception $e)
+        {
             return new WP_Error(1, $e->getMessage());
         }
 
@@ -288,7 +317,8 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway {
     /**
      * Output for the order received page.
      */
-    public function thankyou_page() {
+    public function thankyou_page()
+    {
         if ($this->get_option('instructions'))
             echo wpautop(wptexturize($this->get_option('instructions')));
     }

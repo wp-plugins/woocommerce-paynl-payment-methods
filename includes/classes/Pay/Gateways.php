@@ -24,6 +24,7 @@ class Pay_Gateways {
             'Pay_Gateway_Overboeking',
             'Pay_Gateway_Paypal',
             'Pay_Gateway_Paysafecard',
+            'Pay_Gateway_Phone',
             'Pay_Gateway_Podiumcadeaukaart',
             'Pay_Gateway_Postepay',
             'Pay_Gateway_Sofortbanking',
