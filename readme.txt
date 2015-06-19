@@ -4,7 +4,7 @@ Donate link: https://www.pay.nl/webshops/plugin-woocommerce
 Link: http://www.pay.nl
 Tags: paynl, paymentmethods, woocommerce, ideal, paypal, creditcard, mybank, sofortbanking, afterpay, mistercash, bancontact, paysafecard, clickandbuy, giropay, incasso, betaalmethoden
 Requires at least: 3.0.1
-Stable tag: 2.3.5
+Stable tag: 2.3.6
 Tested up to: 4.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -106,6 +106,9 @@ Paid accounts have better tarriffs! see: [tariffs](http://pay.nl/tarieven)
 4. The iDEAL payment screen (Rabobank)
 
 == Changelog ==
+= 2.3.6 =
+* Now sending phone number for Afterpay
+* Handling of DENIED status fixed
 = 2.3.5 =
 * Added payment method 'Pay by phone'
 * Fixed a problem where a payment method could not be disabled, when first disabled in the pay.nl admin

@@ -126,7 +126,7 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway
         }
 
         if (get_option('paynl_send_order_data') == true)
-        {
+        {   
             // order gegevens ophalen
             $shippingAddress = $order->shipping_address_1 . ' ' . $order->shipping_address_2;
             $arrShippingAddress = explode(' ', trim($shippingAddress));
@@ -143,6 +143,7 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway
             $arrEnduser = array(
                 'initials' => substr($order->shipping_first_name, 0, 1),
                 'lastName' => $order->shipping_last_name,
+                'phoneNumber' => $order->billing_phone,
                 'emailAddress' => $order->billing_email,
                 'address' => array(
                     'streetName' => $shippingStreet,
