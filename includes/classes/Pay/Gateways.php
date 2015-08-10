@@ -173,28 +173,36 @@ class Pay_Gateways
 
     public static function _onExchange()
     {
+        ob_start();
         try
-        {
+        {   
+            $pending = false;
             if ($_GET['action'] == 'new_ppt')
             {
                 $status = self::STATUS_SUCCESS;
             } elseif ($_GET['action'] == 'pending')
             {
                 $status = self::STATUS_PENDING;
-                die('TRUE|Ignoring pending');
-                return;
+                $pending = true;
+                $message = 'TRUE|Ignoring pending';  
             } elseif ($_GET['action'] == 'cancel')
             {
                 $status = self::STATUS_CANCELED;
             }
-
-            $url = Pay_Helper_Transaction::processTransaction($_GET['order_id'], $status);
-            $message = 'Status updated to ' . $status;
+            if(!$pending){
+                $url = Pay_Helper_Transaction::processTransaction($_GET['order_id'], $status);
+                $message = 'TRUE|Status updated to ' . $status;
+            }
         } catch (Pay_Exception $e)
         {
-            $message = 'Error: ' . $e->getMessage();
+            $message = 'False|Error: ' . $e->getMessage();
         }
-        die('TRUE|' . $message);
+        $suppressed = ob_get_clean();
+        
+        if(!empty($suppressed)){
+            $message .=' |Suppressed Output: '.$suppressed;
+        }
+        die($message);
     }
 
     public static function getStatusFromStatusId($statusId)
