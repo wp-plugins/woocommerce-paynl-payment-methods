@@ -20,7 +20,7 @@ class Pay_Helper_Transaction {
             '%s', '%d', '%d', '%d', '%d', '%s', '%s'
                 )
         );
-        $insertId = $wbdb->insert_id;
+        $insertId = $wpdb->insert_id;
         return $insertId;
     }
     
