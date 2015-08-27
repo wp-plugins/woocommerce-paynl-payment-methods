@@ -109,14 +109,14 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway
         $amount = round($order->get_total() * 100);
 
         $api->setAmount($amount);
-        $api->setDescription($order->id);
+        $api->setDescription($order->get_order_number());
 
 
         $returnUrl = add_query_arg('wc-api', 'Wc_Pay_Gateway_Return', home_url('/'));
         $exchangeUrl = add_query_arg('wc-api', 'Wc_Pay_Gateway_Exchange', home_url('/'));
         $api->setFinishUrl($returnUrl);
         $api->setExchangeUrl($exchangeUrl);
-        $api->setOrderId($order->id);
+        $api->setOrderId($order->get_order_number());
         $api->setCurrency($order->get_order_currency());
         $api->setPaymentOptionId($this->getOptionId());
 
