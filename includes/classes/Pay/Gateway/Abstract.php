@@ -195,10 +195,20 @@ abstract class Pay_Gateway_Abstract extends WC_Payment_Gateway
             if ($shipping != 0)
             {
                 $totalShipping = round($shipping * 100);
-                $api->addProduct('SHIPPING', 'Verzendkosten', $totalShipping, 1, 0);
+                $api->addProduct('SHIPPING', 'Verzendkosten', $totalShipping, 1, 'H');
                 $totalFromLines += $totalShipping;
             }
 
+			//Extra kosten meesturen
+			$fees = $order->get_fees();
+            if(!empty($fees)){
+                foreach($fees as $fee){
+                    $feeAmount = round($fee['line_total']*100);
+                    $api->addProduct($fee['type'], $fee['name'], $feeAmount, 1, 'H');
+                    $totalFromLines += $feeAmount;
+                }
+            }
+			
             // Nu heb ik alles meegestuurd wat ik weet, er kan door afrondingsverschillen of door andere plugins een verschil ontstaan.
             // Daarom stuur ik het verschil tussen de rijtotalen en het totaal mee als correctieregel
             $correction = $amount - $totalFromLines;
