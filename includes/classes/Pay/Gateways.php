@@ -12,11 +12,13 @@ class Pay_Gateways
 
         $paymentOptions = array(
             'Pay_Gateway_Afterpay',
+			'Pay_Gateway_Billink',
             'Pay_Gateway_Cartebleue',
             'Pay_Gateway_Clickandbuy',
             'Pay_Gateway_Fashioncheque',
             'Pay_Gateway_Gezondheidsbon',
             'Pay_Gateway_Giropay',
+			'Pay_Gateway_Givacard',
             'Pay_Gateway_Ideal',
             'Pay_Gateway_Incasso',
             'Pay_Gateway_Maestro',
@@ -31,6 +33,7 @@ class Pay_Gateways
             'Pay_Gateway_Postepay',
             'Pay_Gateway_Sofortbanking',
             'Pay_Gateway_Visamastercard',
+			'Pay_Gateway_Wijncadeau',
             'Pay_Gateway_Yourgift',
         );
 

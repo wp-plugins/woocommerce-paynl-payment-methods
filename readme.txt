@@ -2,9 +2,9 @@
 Contributors: andypay
 Donate link: https://www.pay.nl/webshops/plugin-woocommerce
 Link: http://www.pay.nl
-Tags: paynl, paymentmethods, woocommerce, ideal, paypal, creditcard, mybank, sofortbanking, afterpay, mistercash, bancontact, paysafecard, clickandbuy, giropay, incasso, betaalmethoden
+Tags: paynl, paymentmethods, woocommerce, ideal, paypal, creditcard, mybank, sofortbanking, afterpay, mistercash, bancontact, paysafecard, clickandbuy, giropay, incasso, betaalmethoden, billink, wijncadeau, givacard
 Requires at least: 3.0.1
-Stable tag: 2.3.11
+Stable tag: 2.3.12
 Tested up to: 4.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,6 +33,9 @@ With Pay.nl you can add the following payment options to your website:
 * Gezondheidsbon
 * Fashioncheque
 * Podiumcadeaukaart
+* Billink
+* Givacard
+* Wijncadeau
 
 For the registration form, visit the registration page (in Dutch): [www.pay.nl/registreren](http://www.pay.nl/registreren)
 For more information about the payment rates go to [www.pay.nl/tarieven](htp://www.pay.nl/tarieven)
@@ -86,6 +89,9 @@ At the moment the plugin supports the following payment methods:
 * Gezondheidsbon
 * Fashioncheque
 * Podiumcadeaukaart
+* Billink
+* Givacard
+* Wijncadeau
 
 = What does it cost? =
 
@@ -106,6 +112,11 @@ Paid accounts have better tarriffs! see: [tariffs](http://pay.nl/tarieven)
 4. The iDEAL payment screen (Rabobank)
 
 == Changelog ==
+= 2.3.12 =
+Added new Payment methods
+* Billink
+* Givacard
+* Wijncadeau
 = 2.3.11 =
 Sending the fees as a product instead of a correction line
 = 2.3.10 =
@@ -141,29 +152,21 @@ Fixed a small typo in Pay_Helper_Transaction
 * Vat was not sent to pay.nl correctly in the product lines
 = 2.2.9 =
 * Removed cancel from the plugin to fix bugs refilling the cart
-
 = 2.2.8 =
 * Added refund support
-
 = 2.2.7 =
 * Removed anonymous function to support php < 5.3
-
 = 2.2.6 =
 * Changed the behaviour of activating/deactivating the plugin
 * Added admin notice when woocommerce is not loaded
-
 = 2.2.5 =
 * Added some assets
-
 = 2.2.4 =
 * Added payment method 'Click and buy'
-
 = 2.2.3 =
 * Added new payment method 'Mybank'
-
 = 2.2.2 =
 * Fixed a bug where the plugin would not detect woocommerce when using sitewide plugins
-
 = 2.2.1 =
 * Compatible with wordpress 2.2
 
