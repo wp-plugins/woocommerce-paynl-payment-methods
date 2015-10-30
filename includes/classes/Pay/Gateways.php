@@ -16,6 +16,7 @@ class Pay_Gateways
             'Pay_Gateway_Cartebleue',
             'Pay_Gateway_Clickandbuy',
             'Pay_Gateway_Fashioncheque',
+			'Pay_Gateway_Fashiongiftcard',
             'Pay_Gateway_Gezondheidsbon',
             'Pay_Gateway_Giropay',
 			'Pay_Gateway_Givacard',

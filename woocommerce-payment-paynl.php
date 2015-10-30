@@ -4,7 +4,7 @@
  * Plugin Name: Woocommerce Pay.nl Payment Methods
  * Plugin URI: https://wordpress.org/plugins/woocommerce-paynl-payment-methods/
  * Description: Pay.nl payment methods for woocommerce
- * Version: 2.3.12
+ * Version: 2.3.13
  * Author: andypay
  * Author URI: http://www.pay.nl
  * Requires at least: 3.0.1
